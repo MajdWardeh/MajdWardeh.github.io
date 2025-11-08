@@ -1,452 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Majd Wardeh | Computer Vision & Robotics</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    :root {
-      --bg: #ffffff;
-      --text: #111111;
-      --muted: #666666;
-      --accent: #1a3d7c;
-      --border: #e5e5e5;
-      --font-sans: -apple-system, BlinkMacSystemFont, system-ui, -system-ui,
-                   "SF Pro Text", -apple-system, BlinkMacSystemFont,
-                   "Segoe UI", sans-serif;
-      --max-width: 900px;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: var(--font-sans);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      display: flex;
-      justify-content: center;
-      padding: 32px 16px 40px;
-    }
-    .page {
-      max-width: var(--max-width);
-      width: 100%;
-    }
-    header {
-      display: grid;
-      grid-template-columns: 1.6fr auto;
-      gap: 20px;
-      align-items: center;
-      padding-bottom: 18px;
-      border-bottom: 1px solid var(--border);
-    }
-    @media (max-width: 720px) {
-      header { grid-template-columns: 1fr; }
-    }
-    .name {
-      font-size: 2rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-    .tagline {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-    .contact {
-      margin-top: 8px;
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-    .contact a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    .contact span:not(:last-child)::after {
-      content: "·";
-      margin: 0 6px;
-      color: #bbbbbb;
-    }
-    .labels {
-      margin-top: 6px;
-      font-size: 0.76rem;
-      color: var(--muted);
-    }
-    .labels span {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      margin-right: 4px;
-      margin-top: 4px;
-      white-space: nowrap;
-    }
-    .photo {
-      width: 96px;
-      height: 96px;
-      border-radius: 8px;
-      background-size: cover;
-      background-position: center;
-      background-color: #ddd;
-      justify-self: end;
-    }
-
-    main {
-      margin-top: 18px;
-      display: grid;
-      grid-template-columns: 2fr 1.2fr;
-      gap: 24px;
-    }
-    @media (max-width: 900px) {
-      main { grid-template-columns: 1fr; }
-    }
-
-    section {
-      margin-bottom: 18px;
-    }
-    h2 {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--accent);
-      margin-bottom: 4px;
-    }
-    p, li {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-    strong { color: #222; font-weight: 500; }
-    ul { padding-left: 16px; margin-top: 4px; }
-    .block {
-      padding: 8px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .block:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-    .title-line {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      font-size: 0.8rem;
-      color: #222;
-      font-weight: 500;
-    }
-    .meta {
-      font-size: 0.72rem;
-      color: var(--muted);
-      margin-top: 1px;
-    }
-    .pill {
-      display: inline-block;
-      font-size: 0.7rem;
-      padding: 2px 7px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      margin-top: 4px;
-      margin-right: 4px;
-      color: var(--muted);
-    }
-    .link {
-      font-size: 0.72rem;
-      color: var(--accent);
-      text-decoration: none;
-    }
-    .list-compact {
-      list-style: none;
-      padding-left: 0;
-      margin-top: 2px;
-    }
-    .list-compact li {
-      margin-top: 2px;
-    }
-    .note {
-      font-size: 0.72rem;
-      color: var(--muted);
-      margin-top: 3px;
-    }
-  </style>
-</head>
-<body>
-<div class="page">
-
-  <!-- HEADER -->
-  <header>
-    <div>
-      <div class="name">Majd Wardeh</div>
-      <div class="tagline">
-        Computer Vision & Robotics Engineer — Visual SLAM, Autonomous Systems, Embedded ML
-      </div>
-      <div class="contact">
-        <span>Frankfurt am Main, Germany</span>
-        <span><a href="mailto:majd.wardeh@gmail.com">majd.wardeh@gmail.com</a></span>
-        <span><a href="tel:+4917676968529">+49 176 7696 8529</a></span>
-        <span><a href="https://www.linkedin.com/in/majd-wardeh-893451b7" target="_blank">LinkedIn</a></span>
-      </div>
-      <div class="labels">
-        <span>M.E. Electrical & Computer Engineering — AUB</span>
-        <span>B.E. Control & Automation — 1st in class</span>
-        <span>Autonomous Drone Racing</span>
-        <span>Visual SLAM</span>
-      </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Majd Wardeh | Computer Vision & Robotics</title>
+    <meta name="description" content="Computer Vision & Robotics Engineer — Visual SLAM, Autonomous Systems, Embedded ML" />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --surface: #ffffff;
+        --text: #0f172a;
+        --muted: #616a7d;
+        --accent: #1a3d7c;
+        --accent-soft: #e8efff;
+        --border: #e6e8ee;
+        --shadow: 0 1px 2px rgba(17, 24, 39, 0.06), 0 8px 24px rgba(17, 24, 39, 0.06);
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, system-ui, sans-serif;
+        --max-width: 960px;
+        --radius: 14px;
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        color: var(--text);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      a { color: var(--accent); text-decoration: none; }
+      .wrap { max-width: var(--max-width); margin: 0 auto; padding: 24px 20px 40px; }
+      .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+      .hero { display: grid; grid-template-columns: 1fr auto; gap: 20px; padding: 22px; align-items: center; }
+      .hero .left { min-width: 0; }
+      .name { font-size: 1.9rem; font-weight: 700; letter-spacing: 0.01em; }
+      .tagline { font-size: 0.98rem; color: var(--muted); margin-top: 6px; }
+      .meta { margin-top: 10px; font-size: 0.9rem; color: var(--muted); }
+      .meta span:not(:last-child)::after { content: "•"; margin: 0 8px; color: #aab0bd; }
+      .labels { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+      .chip { display: inline-block; font-size: 0.76rem; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--border); background: #fff; color: #3b4353; }
+      .photo { width: 96px; height: 96px; border-radius: 12px; background-size: cover; background-position: center; border: 1px solid var(--border); box-shadow: var(--shadow); }
+      .nav { position: sticky; top: 0; z-index: 40; backdrop-filter: saturate(180%) blur(10px); background: rgba(255,255,255,0.75); border-bottom: 1px solid var(--border); }
+      .nav-inner { max-width: var(--max-width); margin: 0 auto; display: flex; gap: 10px; padding: 10px 20px; overflow-x: auto; }
+      .nav a { font-size: 0.86rem; color: #334155; padding: 7px 12px; border-radius: 999px; border: 1px solid transparent; }
+      .nav a:hover { background: var(--accent-soft); color: var(--accent); border-color: #ccdafd; }
+      main { display: grid; grid-template-columns: 1.75fr 1.1fr; gap: 20px; margin-top: 20px; }
+      @media (max-width: 920px) { .hero { grid-template-columns: 1fr; } main { grid-template-columns: 1fr; } .photo { width: 88px; height: 88px; } }
+      section { padding: 18px 22px; }
+      h2 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); margin: 2px 0 8px; }
+      p, li { font-size: 0.9rem; color: var(--muted); }
+      .block { padding: 12px 0; border-bottom: 1px solid var(--border); }
+      .block:last-child { border-bottom: none; }
+      .title-line { display: flex; justify-content: space-between; gap: 10px; font-weight: 600; color: #1f2937; }
+      .sub { font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
+      .pills { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
+      .pill { font-size: 0.75rem; padding: 4px 10px; border: 1px solid var(--border); border-radius: 999px; color: #465067; }
+      .links a { font-size: 0.85rem; margin-right: 10px; }
+      ul { padding-left: 18px; margin: 6px 0 0; }
+      .note { font-size: 0.86rem; color: var(--muted); }
+      .footer { text-align: center; color: var(--muted); font-size: 0.8rem; padding: 18px; }
+      html { scroll-behavior: smooth; }
+    </style>
+    <!-- React (no build step) -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div class="nav">
+      <nav class="nav-inner">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#thesis">Thesis</a>
+        <a href="#education">Education</a>
+        <a href="#awards">Awards</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-    <!-- Update background-image with your actual photo path -->
-    <div class="photo" style="background-image:url('photos/cv_photo_1_resized.jpg');"></div>
-  </header>
+    <div id="root" class="wrap"></div>
 
-  <main>
+    <script type="text/babel">
+      const Chip = ({ children }) => <span className="chip">{children}</span>;
+      const Pill = ({ children }) => <span className="pill">{children}</span>;
 
-    <!-- LEFT COLUMN: ABOUT + EXPERIENCE + PROJECTS -->
-    <div>
+      const Section = ({ id, title, children }) => (
+        <section id={id} className="card" style={{marginBottom: 16}}>
+          <h2>{title}</h2>
+          <div>{children}</div>
+        </section>
+      );
 
-      <!-- About -->
-      <section>
-        <h2>About</h2>
-        <p>
-          I build vision-based systems that work under real constraints: autonomous parking using surround-view cameras,
-          quadrotors racing through gates at speed, and robots localizing and planning from onboard sensors only.
-          My work combines <strong>deep learning</strong>, <strong>visual SLAM</strong>,
-          <strong>trajectory optimization</strong>, and <strong>embedded deployment</strong>.
-        </p>
-      </section>
-
-      <!-- Experience -->
-      <section>
-        <h2>Experience</h2>
-
-        <div class="block">
-          <div class="title-line">
-            <div>Computer Vision Engineer, Visual SLAM</div>
-            <div>Jun 2022 – Present</div>
+      const Hero = () => (
+        <header className="card hero">
+          <div className="left">
+            <div className="name">Majd Wardeh</div>
+            <div className="tagline">Computer Vision & Robotics Engineer — Visual SLAM, Autonomous Systems, Embedded ML</div>
+            <div className="meta">
+              <span>Frankfurt am Main, Germany</span>
+              <span><a href="mailto:majd.wardeh@gmail.com">majd.wardeh@gmail.com</a></span>
+              <span><a href="tel:+4917676968529">+49 176 7696 8529</a></span>
+              <span><a href="https://www.linkedin.com/in/majd-wardeh-893451b7" target="_blank" rel="noreferrer">LinkedIn</a></span>
+            </div>
+            <div className="labels">
+              <Chip>M.E. Electrical & Computer Engineering — AUB</Chip>
+              <Chip>B.E. Control & Automation — 1st in class</Chip>
+              <Chip>Autonomous Drone Racing</Chip>
+              <Chip>Visual SLAM</Chip>
+            </div>
           </div>
-          <div class="meta">Hyundai MOBIS Parts Europe N.V., Frankfurt</div>
-          <p>
-            Contributing to the <strong>Memory Parking Assistant (MPA)</strong> for a Tier-1 automotive supplier:
-            robust mapping and localization with surround-view cameras in indoor/outdoor environments.
-          </p>
-          <ul>
-            <li>Designed <strong>unsupervised keypoint detection networks</strong> with custom KPIs (COLMAP-based 3D reconstruction).</li>
-            <li>Built automated pipelines to benchmark robustness and quantized models.</li>
-            <li>Integrated keypoint detection into a <strong>multi-head production network</strong>.</li>
-            <li>Implemented <strong>EKF-based sensor fusion</strong> combining multi-camera localization and odometry with uncertainty estimation.</li>
-            <li>Contributed C/C++ integration on embedded platforms under real-time constraints.</li>
-          </ul>
-          <div>
-            <span class="pill">Visual SLAM</span>
-            <span class="pill">PyTorch</span>
-            <span class="pill">C/C++</span>
-            <span class="pill">Embedded Linux</span>
-            <span class="pill">ROS</span>
-            <span class="pill">Docker · Git</span>
+          <div className="photo" style={{backgroundImage: `url('cv_photo_1.jpg')`}} aria-label="Profile photo" />
+        </header>
+      );
+
+      const ExperienceBlock = ({ role, time, place, summary, bullets = [], tags = [] }) => (
+        <div className="block">
+          <div className="title-line">
+            <div>{role}</div>
+            <div>{time}</div>
           </div>
+          {place && <div className="sub">{place}</div>}
+          {summary && <p style={{marginTop: 4}}>{summary}</p>}
+          {bullets.length > 0 && (
+            <ul>
+              {bullets.map((b, i) => <li key={i}>{b}</li>)}
+            </ul>
+          )}
+          {tags.length > 0 && (
+            <div className="pills">
+              {tags.map((t, i) => <Pill key={i}>{t}</Pill>)}
+            </div>
+          )}
         </div>
+      );
 
-        <div class="block">
-          <div class="title-line">
-            <div>Research Assistant, Vision & Robotics Lab</div>
-            <div>Jan 2019 – May 2022</div>
-          </div>
-          <div class="meta">American University of Beirut</div>
-          <p>
-            Research on <strong>autonomous drone racing</strong>: vision-based navigation,
-            gate detection, and minimum-time trajectory generation.
-          </p>
-          <ul>
-            <li>Supervised learning for gate perception and navigation.</li>
-            <li>Minimum-time trajectories via nonlinear optimization, differential flatness & B-splines.</li>
-            <li>Deployed deep models on <strong>NVIDIA Jetson TX2</strong> for real-time onboard perception.</li>
-          </ul>
-          <div>
-            <span class="pill">Deep Learning</span>
-            <span class="pill">TensorFlow</span>
-            <span class="pill">CVXPY</span>
-            <span class="pill">Nonlinear Optimization</span>
-            <span class="pill">ROS</span>
-          </div>
+      const ProjectBlock = ({ title, meta, children, links = [] }) => (
+        <div className="block">
+          <div className="title-line"><div>{title}</div></div>
+          {meta && <div className="sub">{meta}</div>}
+          {children && <p style={{marginTop: 4}}>{children}</p>}
+          {links.length > 0 && (
+            <div className="links" style={{marginTop: 4}}>
+              {links.map(({ href, label }, i) => (
+                <a key={i} href={href} target="_blank" rel="noreferrer">{label}</a>
+              ))}
+            </div>
+          )}
         </div>
+      );
 
-        <div class="block">
-          <div class="title-line">
-            <div>Teaching & Lab Instructor</div>
-            <div>2017 – 2019</div>
-          </div>
-          <div class="meta">AUB · Yarmouk Univ. · Damascus Univ.</div>
-          <p>
-            Led labs in Instrumentation, Electrical & Logic Circuits, and Operating Systems
-            (Linux, shell scripting, processes, semaphores, multithreading).
-          </p>
-        </div>
-      </section>
+      const App = () => (
+        <>
+          <Hero />
+          <main>
+            <div>
+              <Section id="about" title="About">
+                <p>
+                  I build vision-based systems that work under real constraints: autonomous parking using surround-view cameras,
+                  quadrotors racing through gates at speed, and robots localizing and planning from onboard sensors only. My work combines
+                  <strong> deep learning</strong>, <strong> visual SLAM</strong>, <strong> trajectory optimization</strong>, and <strong> embedded deployment</strong>.
+                </p>
+              </Section>
 
-      <!-- Selected Projects -->
-      <section>
-        <h2>Selected Projects</h2>
+              <Section id="experience" title="Experience">
+                <ExperienceBlock
+                  role="Computer Vision Engineer, Visual SLAM"
+                  time="Jun 2022 — Present"
+                  place="Hyundai MOBIS Parts Europe N.V., Frankfurt"
+                  summary="Contributing to Memory Parking Assistant (MPA): robust mapping and localization with surround-view cameras in indoor/outdoor environments."
+                  bullets={[
+                    'Designed unsupervised keypoint detection networks with custom KPIs (COLMAP-based 3D reconstruction).',
+                    'Built automated pipelines to benchmark robustness and quantized models.',
+                    'Integrated keypoint detection into a multi-head production network.',
+                    'Implemented EKF-based sensor fusion combining multi-camera localization and odometry with uncertainty estimation.',
+                    'Contributed C/C++ integration on embedded platforms under real-time constraints.',
+                  ]}
+                  tags={[ 'Visual SLAM', 'PyTorch', 'C/C++', 'Embedded Linux', 'ROS', 'Docker • Git' ]}
+                />
 
-        <div class="block">
-          <div class="title-line">
-            <div>Badminton Playing Robot (BSc FYP)</div>
-            <div></div>
-          </div>
-          <div class="meta">Kinect tracking · Omni-directional robot · C#, C++</div>
-          <p>Real-time shuttlecock tracking, trajectory estimation, and robot control.</p>
-          <a class="link" href="https://youtu.be/ECZxJFbRK5Y" target="_blank">Video</a>
-        </div>
+                <ExperienceBlock
+                  role="Research Assistant, Vision & Robotics Lab"
+                  time="Jan 2019 — May 2022"
+                  place="American University of Beirut"
+                  summary="Research on autonomous drone racing: vision-based navigation, gate detection, and minimum-time trajectory generation."
+                  bullets={[
+                    'Supervised learning for gate perception and navigation.',
+                    'Minimum-time trajectories via nonlinear optimization, differential flatness & B-splines.',
+                    'Deployed deep models on NVIDIA Jetson TX2 for real-time onboard perception.',
+                  ]}
+                  tags={[ 'Deep Learning', 'TensorFlow', 'CVXPY', 'Nonlinear Optimization', 'ROS' ]}
+                />
 
-        <div class="block">
-          <div class="title-line">
-            <div>Gate Corner Detection for ADR</div>
-          </div>
-          <div class="meta">CNN with Partial Affinity Fields · Python</div>
-          <p>Deep model for precise racing gate corner localization as part of drone racing stack.</p>
-        </div>
+                <ExperienceBlock
+                  role="Teaching & Lab Instructor"
+                  time="2017 — 2019"
+                  place="AUB • Yarmouk Univ. • Damascus Univ."
+                  summary="Led labs in Instrumentation, Electrical & Logic Circuits, and Operating Systems (Linux, shell scripting, processes, semaphores, multithreading)."
+                />
+              </Section>
 
-        <div class="block">
-          <div class="title-line">
-            <div>Vision-based Minimum-Time Quadrotor Trajectories</div>
-          </div>
-          <div class="meta">Nonlinear optimization · SQP · B-splines</div>
-          <p>Implemented Penin et al. style planner ensuring visibility of gates while minimizing lap time.</p>
-        </div>
+              <Section id="projects" title="Selected Projects">
+                <ProjectBlock
+                  title="Badminton Playing Robot (BSc FYP)"
+                  meta="Kinect tracking • Omni-directional robot • C#, C++"
+                  links={[{ href: 'https://youtu.be/ECZxJFbRK5Y', label: 'Video' }]}
+                >
+                  Real-time shuttlecock tracking, trajectory estimation, and robot control.
+                </ProjectBlock>
 
-        <div class="block">
-          <div class="title-line">
-            <div>Fast SLAM on Husky Robot</div>
-          </div>
-          <div class="meta">Python · ROS · Gazebo</div>
-          <p>Monte Carlo Localization and Fast SLAM with multiprocessing for real-time simulation.</p>
-          <a class="link" href="https://github.com/Majd-Wardeh/Fast_SLAM/tree/main" target="_blank">Code</a>
-        </div>
+                <ProjectBlock
+                  title="Gate Corner Detection for ADR"
+                  meta="CNN with Partial Affinity Fields • Python"
+                >
+                  Deep model for precise racing gate corner localization as part of drone racing stack.
+                </ProjectBlock>
 
-        <div class="block">
-          <div class="title-line">
-            <div>Tetris Playing Robots (WRO ARC 2017 & 2018)</div>
-          </div>
-          <div class="meta">LabVIEW · Vision · Robotics</div>
-          <p>Omni-directional robots with manipulators and robust part detection.</p>
-          <p class="note">2nd Syria (2017), 1st Syria (2018), 9th/25 World Finals.</p>
-          <a class="link" href="https://youtu.be/akM8H4mN5KU?t=40" target="_blank">V1</a>
-          <span>·</span>
-          <a class="link" href="https://youtu.be/hYsgETGX-HU" target="_blank">V2</a>
-        </div>
+                <ProjectBlock
+                  title="Vision-based Minimum-Time Quadrotor Trajectories"
+                  meta="Nonlinear optimization • SQP • B-splines"
+                >
+                  Implemented Penin et al. style planner ensuring visibility of gates while minimizing lap time.
+                </ProjectBlock>
 
-        <div class="block">
-          <div class="title-line">
-            <div>Mars Rover Robot (EDC 3.0)</div>
-          </div>
-          <div class="meta">C++ · Custom 360° LiDAR</div>
-          <p>Autonomous rover with in-house LiDAR; 1st Place + Design Award.</p>
-          <a class="link" href="https://www.youtube.com/watch?v=0ADbrZ44sHI" target="_blank">Video</a>
-        </div>
+                <ProjectBlock
+                  title="Fast SLAM on Husky Robot"
+                  meta="Python • ROS • Gazebo"
+                  links={[{ href: 'https://github.com/Majd-Wardeh/Fast_SLAM/tree/main', label: 'Code' }]}
+                >
+                  Monte Carlo Localization and Fast SLAM with multiprocessing for real-time simulation.
+                </ProjectBlock>
 
-        <div class="block">
-          <div class="title-line">
-            <div>Fast Gate Detector for Drone Racing</div>
-          </div>
-          <div class="meta">Classical CV · OpenCV</div>
-          <p>LED gate detector reaching ~305 FPS on Intel i7.</p>
-          <a class="link" href="https://youtu.be/DNZrFw6UsgE" target="_blank">Demo</a>
-        </div>
+                <ProjectBlock
+                  title="Tetris Playing Robots (WRO ARC 2017 & 2018)"
+                  meta="LabVIEW • Vision • Robotics"
+                  links={[
+                    { href: 'https://youtu.be/akM8H4mN5KU?t=40', label: 'V1' },
+                    { href: 'https://youtu.be/hYsgETGX-HU', label: 'V2' },
+                  ]}
+                >
+                  Omni-directional robots with manipulators and robust part detection. 2nd Syria (2017), 1st Syria (2018), 9th/25 World Finals.
+                </ProjectBlock>
 
-        <div class="block">
-          <div class="title-line">
-            <div>Face Recognition with Triplet Loss</div>
-          </div>
-          <div class="meta">Deep Metric Learning</div>
-          <p>Low-shot face recognition inspired by VGG Face with ~10 images/identity.</p>
-        </div>
+                <ProjectBlock
+                  title="Mars Rover Robot (EDC 3.0)"
+                  meta="C++ • Custom 360° LiDAR"
+                  links={[{ href: 'https://www.youtube.com/watch?v=0ADbrZ44sHI', label: 'Video' }]}
+                >
+                  Autonomous rover with in-house LiDAR; 1st Place + Design Award.
+                </ProjectBlock>
 
-      </section>
+                <ProjectBlock
+                  title="Fast Gate Detector for Drone Racing"
+                  meta="Classical CV • OpenCV"
+                  links={[{ href: 'https://youtu.be/DNZrFw6UsgE', label: 'Demo' }]}
+                >
+                  LED gate detector reaching ~305 FPS on Intel i7.
+                </ProjectBlock>
 
-    </div>
+                <ProjectBlock
+                  title="Face Recognition with Triplet Loss"
+                  meta="Deep Metric Learning"
+                >
+                  Low-shot face recognition inspired by VGG Face with ~10 images/identity.
+                </ProjectBlock>
+              </Section>
+            </div>
 
-    <!-- RIGHT COLUMN: THESIS, EDUCATION, AWARDS, SKILLS -->
-    <div>
+            <div>
+              <Section id="thesis" title="Master's Thesis">
+                <div className="block">
+                  <div className="title-line"><div>Vision-based Autonomous Drone Racing</div></div>
+                  <p style={{marginTop: 4}}>
+                    End-to-end system for autonomous quadrotor navigation through racing gates using only onboard sensing.
+                  </p>
+                  <ul>
+                    <li><strong>Perception network</strong> for gate detection and 2D corner regression.</li>
+                    <li><strong>Policy network</strong> generating Bézier-parameterized 4D trajectory segments.</li>
+                  </ul>
+                  <p className="note">~90% gate traversal success at speeds up to 5 m/s.</p>
+                  <p className="note">Thesis results video: <a href="#" target="_blank" rel="noreferrer">Add YouTube link here</a></p>
+                </div>
+              </Section>
 
-      <!-- Thesis -->
-      <section>
-        <h2>Master's Thesis</h2>
-        <div class="block">
-          <div class="title-line">
-            <div>Vision-based Autonomous Drone Racing</div>
-          </div>
-          <p>
-            End-to-end system for autonomous quadrotor navigation through racing gates using only onboard sensing.
-          </p>
-          <ul>
-            <li><strong>Perception network</strong> for gate detection and 2D corner regression.</li>
-            <li><strong>Policy network</strong> generating Bézier-parameterized 4D trajectory segments.</li>
-          </ul>
-          <p class="note">
-            ~90% gate traversal success at speeds up to 5 m/s.
-          </p>
-          <p class="note">
-            Thesis results video:
-            <!-- Replace # with actual URL -->
-            <a class="link" href="#" target="_blank">Add YouTube link here</a>
-          </p>
-        </div>
-      </section>
+              <Section id="education" title="Education">
+                <div className="block">
+                  <div className="title-line"><div>M.E. Electrical & Computer Engineering</div><div>2018 — 2022</div></div>
+                  <div className="sub">American University of Beirut</div>
+                  <p className="note">Major: Robotics & Machine Intelligence • Minor: Communications & Signal Processing • 89.57 / 100</p>
+                </div>
+                <div className="block">
+                  <div className="title-line"><div>B.E. Control & Automation Engineering</div><div>2012 — 2017</div></div>
+                  <div className="sub">Damascus University</div>
+                  <p className="note">85.85 / 100 • Ranked 1st in class.</p>
+                </div>
+              </Section>
 
-      <!-- Education -->
-      <section>
-        <h2>Education</h2>
-        <div class="block">
-          <div class="title-line">
-            <div>M.E. Electrical & Computer Engineering</div>
-            <div>2018 – 2022</div>
-          </div>
-          <div class="meta">American University of Beirut</div>
-          <p class="note">
-            Major: Robotics & Machine Intelligence · Minor: Communications & Signal Processing · 89.57 / 100
-          </p>
-        </div>
-        <div class="block">
-          <div class="title-line">
-            <div>B.E. Control & Automation Engineering</div>
-            <div>2012 – 2017</div>
-          </div>
-          <div class="meta">Damascus University</div>
-          <p class="note">
-            85.85 / 100 · Ranked 1st in class.
-          </p>
-        </div>
-      </section>
+              <Section id="awards" title="Awards & Distinctions">
+                <ul className="note" style={{listStyle: 'none', paddingLeft: 0}}>
+                  <li><strong>Master's Graduate Fellowship</strong>, AUB ECE Dept.</li>
+                  <li><strong>Al-Basel Awards for Academic Excellence</strong>, 2014—2016.</li>
+                  <li><strong>WRO ARC:</strong> 1st Syria (2018), 9th/25 World Finals.</li>
+                  <li><strong>EDC 3.0:</strong> 1st Place & Design Award.</li>
+                </ul>
+              </Section>
 
-      <!-- Awards -->
-      <section>
-        <h2>Awards & Distinctions</h2>
-        <ul class="list-compact">
-          <li><strong>Master's Graduate Fellowship</strong>, AUB ECE Dept.</li>
-          <li><strong>Al-Basel Awards for Academic Excellence</strong>, 2014–2016.</li>
-          <li><strong>WRO ARC:</strong> 1st Syria (2018), 9th/25 World Finals.</li>
-          <li><strong>EDC 3.0:</strong> 1st Place & Design Award.</li>
-        </ul>
-      </section>
+              <Section id="skills" title="Skills">
+                <p className="note">
+                  <strong>ML & Vision:</strong> Deep Learning, Visual SLAM, 3D Vision, Gate Detection, Tracking<br />
+                  <strong>Control & Planning:</strong> Trajectory Optimization, Sensor Fusion (EKF), Robotics<br />
+                  <strong>Tools:</strong> PyTorch, TensorFlow, OpenCV, CVXPY, MLflow, ROS<br />
+                  <strong>Languages:</strong> Python, C/C++, C#, LabVIEW<br />
+                  <strong>Platforms:</strong> NVIDIA Jetson, Embedded Linux, Docker, Git
+                </p>
+              </Section>
 
-      <!-- Skills -->
-      <section>
-        <h2>Skills</h2>
-        <p class="note">
-          <strong>ML & Vision:</strong> Deep Learning, Visual SLAM, 3D Vision, Gate Detection, Tracking<br>
-          <strong>Control & Planning:</strong> Trajectory Optimization, Sensor Fusion (EKF), Robotics<br>
-          <strong>Tools:</strong> PyTorch, TensorFlow, OpenCV, CVXPY, MLflow, ROS<br>
-          <strong>Languages:</strong> Python, C/C++, C#, LabVIEW<br>
-          <strong>Platforms:</strong> NVIDIA Jetson, Embedded Linux, Docker, Git
-        </p>
-      </section>
+              <Section id="contact" title="Contact">
+                <p className="note">
+                  Open to roles in Computer Vision, Autonomous Driving, Robotics, and Research Engineering.
+                  For collaborations: <a href="mailto:majd.wardeh@gmail.com">majd.wardeh@gmail.com</a>.
+                </p>
+              </Section>
+            </div>
+          </main>
 
-      <!-- Contact -->
-      <section>
-        <h2>Contact</h2>
-        <p class="note">
-          Open to roles in Computer Vision, Autonomous Driving, Robotics, and Research Engineering.
-          For collaborations:
-          <a class="link" href="mailto:majd.wardeh@gmail.com">majd.wardeh@gmail.com</a>.
-        </p>
-      </section>
+          <div className="footer">© <span>{new Date().getFullYear()}</span> Majd Wardeh</div>
+        </>
+      );
 
-    </div>
-  </main>
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App />);
+    </script>
+  </body>
+  </html>
 
-</div>
-</body>
-</html>
